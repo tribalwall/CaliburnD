@@ -3,7 +3,17 @@ namespace CaliD {
     using System.Collections.Generic;
     using Caliburn.Micro;
 
-    public class AppBootstrapper : BootstrapperBase { 
+
+
+    
+    using System.Data;
+    using System.Windows;
+    using MySql.Data.MySqlClient;
+
+
+ 
+    public class AppBootstrapper : BootstrapperBase
+    { 
         SimpleContainer container;
 
         public AppBootstrapper() {
@@ -15,7 +25,7 @@ namespace CaliD {
 
             container.Singleton<IWindowManager, WindowManager>();
             container.Singleton<IEventAggregator, EventAggregator>();
-            container.PerRequest<IShell, ShellViewModel>();
+            container.PerRequest<IShell, MainViewModel>();
         }
 
         protected override object GetInstance(Type service, string key) {
@@ -35,7 +45,16 @@ namespace CaliD {
         }
 
         protected override void OnStartup(object sender, System.Windows.StartupEventArgs e) {
-            DisplayRootViewFor<IShell>();
+
+             DisplayRootViewFor<IShell>();
+ 
         }
+
+          
+
+        
+
+
+
     }
 }

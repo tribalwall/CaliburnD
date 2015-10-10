@@ -1,5 +1,22 @@
 namespace CaliD {
-    public interface IShell { 
+
+    using System;
+    using System.Data;
+    using System.Windows;
+    using MySql.Data.MySqlClient;
+ 
+
+
+    public interface IShell
+    {
+
+         
+
+ 
+
+
+
+
     } 
 
 } 
